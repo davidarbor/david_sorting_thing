@@ -16,6 +16,11 @@ public class Runner{
             System.out.println(theDeck.listHand()[j].getName());
         }
 
+        Mergesort m=new Mergesort();
+        int toSort[]={12, 11, 13, 5, 6, 7};
+        m.numbers=toSort;
+        m.mergesort();
+
         /*
         System.out.println("");
         System.out.println("Bubble-sorted hand:");

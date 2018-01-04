@@ -4,6 +4,7 @@ import java.util.Collections;
 public class Deck{
     private Card[] allCards;
     private Card[] hand=new Card[7];
+    
 
     public Deck(boolean x){
         int count=0;
@@ -55,17 +56,14 @@ public class Deck{
         }
         return allCards;
     }
-    public Card[] selectionSortHand(){
-        int firstValue=hand[0].getValue();
-        for(int i=0; i<hand.length; i++){
-            if(firstValue>hand[i].getValue()){
+    public Card[] selectionSort(){
+        int firstValue=allCards[0].getValue();
+        for(int i=0; i<allCards.length; i++){
+            if(firstValue>allCards[i].getValue()){
                 swap(0, i);
             }
         }
-        return hand;
-    }
-    public void mergeSort(){
-
+        return allCards;
     }
     public void binarySearch(int suit, int face){
 

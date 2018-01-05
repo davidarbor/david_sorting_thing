@@ -7,21 +7,30 @@ public class Runner{
             System.out.println(theDeck.getDeck()[i].getName());
         }
 
+        theDeck.mergeSort(theDeck.allCards);
+        System.out.println("");
+        System.out.println("Merge-sorted deck:");
+        for(int k=0; k<theDeck.getDeck().length; k++){
+            System.out.println(theDeck.getDeck()[k].getName());
+        }
+
         theDeck.shuffleDeck();
         System.out.println("");
         System.out.println("Hand dealt:");
-        theDeck.bubbleSort();
         theDeck.dealHand(7);
+        theDeck.mergeSortHand();
         for(int j=0; j<theDeck.listHand().length; j++){
             System.out.println(theDeck.listHand()[j].getName());
         }
 
-        Mergesort m=new Mergesort();
-        int toSort[]={12, 11, 13, 5, 6, 7};
-        m.numbers=toSort;
-        m.mergesort();
-
         /*
+        theDeck.mergeSortHand();
+        System.out.println("");
+        System.out.println("Merge-sorted hand:");
+        for(int k=0; k<theDeck.listHand().length; k++){
+            System.out.println(theDeck.listHand()[k].getName());
+        }
+
         System.out.println("");
         System.out.println("Bubble-sorted hand:");
         for(int k=0; k<theDeck.bubbleSortHand().length; k++){

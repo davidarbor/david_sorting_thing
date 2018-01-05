@@ -2,9 +2,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Deck{
-    private Card[] allCards;
+    Card[] allCards;
     private Card[] hand=new Card[7];
-    
+
 
     public Deck(boolean x){
         int count=0;
@@ -64,6 +64,49 @@ public class Deck{
             }
         }
         return allCards;
+    }
+    public void mergeSortHand(){
+        mergeSort(hand);
+    }
+    public static Card[] leftHalf(Card[] array){
+        int size=array.length/2;
+        Card[] left=new Card[size];
+        for(int i=0; i<size; i++){
+            left[i]=array[i];
+        }
+        return left;
+    }
+    public static Card[] rightHalf(Card[] array) {
+        int size=array.length/2;
+        int sizeB=array.length-size;
+        Card[] right=new Card[sizeB];
+        for (int i=0; i<=sizeB-1; i++){
+            right[i]=array[i-1+sizeB];
+        }
+        return right;
+    }
+    public void mergeSort(Card[] array){
+        if(array.length>2){
+            Card[] left=leftHalf(array);
+            Card[] right=rightHalf(array);
+            mergeSort(leftHalf(array));
+            mergeSort(right);
+            merge(array, left, right);
+        }
+    }
+    public static void merge(Card[] result, Card[] left, Card[] right){
+        int indexLeft=0;
+        int indexRight=0;
+        for(int i=0; i<result.length; i++){
+            if(indexRight>=right.length || (indexLeft<left.length && left[indexLeft].getValue()<=right[indexRight].getValue())){
+                result[i]=left[indexLeft];
+                indexLeft++;
+            }
+            else{
+                result[i]=right[indexRight];
+                indexRight++;
+            }
+        }
     }
     public void binarySearch(int suit, int face){
 

@@ -23,6 +23,9 @@ public class Runner{
             System.out.println(theDeck.listHand()[j].getName());
         }
 
+        System.out.println("");
+        System.out.println("Location of value \"5\":");
+        System.out.println(theDeck.binarySearch(theDeck.allCards, 0, theDeck.allCards.length, 10));
         /*
         theDeck.mergeSortHand();
         System.out.println("");

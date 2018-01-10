@@ -3,9 +3,9 @@ import java.util.Collections;
 public class Runner{
     public static void main(String[] args){
         Deck theDeck=new Deck(true);
-        for(int i=0; i<theDeck.getDeck().length; i++) {
+        /*for(int i=0; i<theDeck.getDeck().length; i++) {
             System.out.println(theDeck.getDeck()[i].getName());
-        }
+        }*/
 
         theDeck.mergeSort(theDeck.allCards);
         System.out.println("");
@@ -24,8 +24,7 @@ public class Runner{
         }
 
         System.out.println("");
-        System.out.println("Location of value \"5\":");
-        System.out.println(theDeck.binarySearch(theDeck.allCards, 0, theDeck.allCards.length, 10));
+        theDeck.binarySearchHand(9, 3);
 
         /*
         theDeck.mergeSortHand();

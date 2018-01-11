@@ -91,7 +91,7 @@ public class Deck{
             Card[] left=leftHalf(array);
             Card[] right=rightHalf(array);
             mergeSort(leftHalf(array));
-            mergeSort(right);
+            mergeSort(rightHalf(array));
             merge(array, left, right);
         }
     }

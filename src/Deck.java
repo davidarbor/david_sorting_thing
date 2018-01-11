@@ -115,7 +115,7 @@ public class Deck{
     public void binarySearch(Card[] arr, int searchFace, int searchSuit){
 
         if(searchSuit==arr[arr.length /2].getSuit() && searchFace==arr[arr.length /2].getValue()){
-            System.out.println("Found card at "+arr[arr.length/2].getName());
+            System.out.println("Found card "+arr[arr.length/2].getName());
         }
         else if(arr.length==1){
             System.out.println(new Card(searchSuit, searchFace).getName()+" not in hand");
